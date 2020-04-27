@@ -1,0 +1,28 @@
+1Exception和Error区别?
+异常:可以避免，可以处理，可以恢复，可预测
+
+错误:不可避免，很难恢复，无法预测(jvm内存溢出:jvm调优 -xms  -xmx)
+
+2、什么是自定义异常？如何实现自定义异常？
+自定义异常:根据自己业务定义异常，
+extends  Exception
+extends  RunTimeException   运行时异常
+
+throw  : throw new Exception("") try catch
+throws : throws Exception
+
+优势:通过定义自己业务异常，来提高系统安全性
+
+3、通过配置错误页面(web.xml),提高系统安全性及用户体验
+	<error-page>
+		<error-code>404</error-code>
+		<location>error.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>400</error-code>
+		<location>error.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>error.jsp</location>
+	</error-page>
